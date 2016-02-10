@@ -1,0 +1,509 @@
+/* 
+Theme Name: InstantWP 
+Theme URI: http://gentsthemes.com
+Description: Responsive WordPress theme with all the Bootstrap elements and features. Also includes different page layouts and custom post types.
+
+Author: GentsThemes 
+Author URI: http://gentsthemes.com
+Version: 3.2.0
+Tags: white, black, gray, light, custom-menu, custom-header, custom-background, one-column, two-columns, left-sidebar, right-sidebar, flexible-width, theme-options, threaded-comments, full-width-template, sticky-post, translation-ready, bootstrap, twitter
+
+Copyright (C) 2011-2014 GentsThemes 
+License: GNU General Public License, version 3 (GPLv3)
+License URI: license.txt 
+	
+CREATE CHILD THEME.
+See: http://codex.wordpress.org/Child_Themes 
+	
+*/
+
+/* ==========================================================================
+   Base Styles, Bootstrap Modifications
+   ========================================================================== */
+
+
+::-moz-selection {
+    background: #f2c2c9;
+    color: #a4003a;
+    text-shadow: none;
+}
+
+::selection {
+    background: #16a085;
+    color: #a4003a;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+ hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.centered {
+	text-align: center
+}
+.smt{
+	margin-top: 30px;
+}
+.mt {
+	margin-top: 80px;
+}
+.lmt{
+	margin-top: 160px;
+}
+.smb{
+	margin-bottom: 30px;
+}
+.mb {
+	margin-bottom: 80px;
+}
+.lmb{
+	margin-bottom: 160px;
+}
+.xlmb{
+	margin-bottom: 260px;
+}
+
+/* ==========================================================================
+   General styles
+   ========================================================================== */
+@font-face {
+font-family: Monty;
+font-weight: light;
+src: url("fonts/Montserrat-Light.otf") format("opentype");
+}
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 700;
+    color: #4a4a4a;
+}
+p{
+	line-height: 1.5;
+}
+
+.navbar-brand {
+	font-weight: 700;
+}
+
+.navbar-default .navbar-brand {
+	color: #1abc9c;
+}
+
+.navbar-default {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	color: white;
+	background-color: transparent;
+	border-bottom: 2px solid white;
+}
+
+.navbar-default .navbar-nav > li > a {
+	color: white;
+	margin-top: 0;
+}
+
+/* Scrolling navbar */
+.navbar-default,
+.navbar-default #logo,
+.navbar-default.scroll .navbar-nav > li > a, 
+.navbar-default.scroll .navbar-nav > .active > a,
+.navbar-default.scroll .navbar-nav > .active > a:hover,
+.navbar-default.scroll .navbar-nav > .active > a:focus{
+	transition: all 0.3s;
+}
+
+.navbar-default.scroll{
+	background-color: #1A1A18;
+	transition: all 0.3s;
+}
+.navbar-default.scroll #logo{
+	margin-top: -1em;
+	transition: all 0.3s;
+}
+.navbar-default.scroll .navbar-nav > .active > a,
+.navbar-default.scroll .navbar-nav > .active > a:hover,
+.navbar-default.scroll .navbar-nav > .active > a:focus {
+	font-family: Monty;
+	font-weight: light;
+	border-bottom: 1px solid white;
+	transition: all 0.3s;
+}
+
+.navbar-default.scroll .navbar-nav > li > a {
+	margin-top: 8px;
+	font-family: Monty;
+	font-weight: light;
+	transition: all 0.5s;
+}
+/* ==========================================================================
+   Wrap Sections
+   ========================================================================== */
+
+#headerwrap {
+	background: url(images/back.jpg) no-repeat center top;
+	margin-top: -70px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#headerwrap h1 {
+	text-align: center;
+	color:#ffffff;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	letter-spacing: 4px;
+	font-size: 5em;
+	font-weight: bold;
+}
+
+#headerwrap h4 {
+	font-weight: 400;
+	color: #ffffff
+}
+
+#social {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #f2f2f2;
+}
+#social .row{
+	max-width: 200px;
+	margin: 0 auto;
+}
+#social .row div{
+	display: inline;
+}
+
+
+#social i {
+	text-align: center;
+	font-size: 40px;
+	color: #4a4a4a
+}
+
+#social i:hover {
+	color: #1abc9c
+}
+
+#footerwrap {
+	padding-top: 70px;
+	padding-bottom: 50px;
+	background-color: #2f2f2f;
+}
+
+#footerwrap p {
+	color: #f2f2f2;
+	margin-left: 10px;
+}
+
+#workwrap {	
+	background: url(images/work.jpg) no-repeat center top;
+	margin-top: -70px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#workwrap h1 {
+	color:#ffffff;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	letter-spacing: 4px;
+	font-size: 5em;
+	font-weight: bold;
+}
+
+#workwrap h4 {
+	font-weight: 400;
+	color: #ffffff
+}
+img.the-works{
+	max-width: 640px;
+	height: auto;
+	margin: 0 auto;
+}
+
+#blogwrap {	
+	background: url(images/blog.jpg) no-repeat center top;
+	margin-top: -70px;
+	padding-top: 350px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 550px;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#blogwrap h1 {
+	color:#ffffff;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	letter-spacing: 4px;
+	font-size: 4em;
+	font-weight: bold;
+}
+
+#blogwrap h4 {
+	font-weight: 400;
+	color: #ffffff
+}
+
+
+/* blog */
+
+	.blog-wrap {	
+		background:#ffffff;
+		padding:25px 0;
+		position:relative;
+		display:block;
+		z-index:1;
+	}
+	.blog-wrap .blog-media {
+		margin:20px 0;
+	}
+	.post-desc {
+		padding:0;
+		margin-top: 10px;
+	}
+	.post-desc2 {
+		padding:0;
+		margin-top: 10px;
+		text-align: left
+	}
+
+	.author-wrap{
+	  position: relative;
+	  z-index:1;
+	  margin: -70px auto 0;
+	  width:100px;
+	}
+	 .page-header {
+		border-bottom: 1px solid #EEEEEE;
+		margin:0 0;
+		padding-bottom: 0;
+	}
+	
+	.author-wrap > .inside img{
+	  background:#fff;
+	  border: 2px solid #eeeeee;
+	  display: block;
+	  margin: 0 auto;
+	  width:100px;
+	  height:100px;
+	  padding: 3px;
+	  position: relative;
+	  text-align: center;
+	  -webkit-border-radius: 50%;
+	  -moz-border-radius: 50%;
+	  -ms-border-radius: 50%;
+	  -o-border-radius: 50%;
+	  border-radius: 50%;
+	}	
+	.blog-title h2{}
+	.blog-title .post-meta{}
+	
+	.post-meta {
+		font-size: 13px;
+	}
+	.post-meta a,
+	.post-meta span{
+	}
+	.post-meta .sep{
+	  color: #777777;
+	  padding: 0 10px 0 10px;
+	}
+	#comments_wrapper {margin:60px 0}
+	.comment-list {
+		margin: 60px 0;
+		list-style:none;
+	}
+	.comment-list ul li,
+	.comment-list ol li {list-style:none;}
+	.comment-avatar {
+		margin: 0 20px 0 0;
+		float: left;
+		height: 70px; width: 70px;
+	}
+	.comment-content {
+	   background: #f5f5f5;
+		border: 1px solid #eeeeee;
+		margin-bottom: 20px;
+		overflow: hidden;
+		padding: 20px;
+	}
+	.comment-author {
+		margin-bottom: 10px;
+	}
+	.comment-meta {
+		font-size: 12px;
+		color: #aaa;
+		padding-left:10px;
+	}
+	.comment-reply {
+		float: right;
+		font-size: 12px;
+		color: #aaa;
+	}
+	.leave-comment textarea {
+		height: 150px;
+	}
+	.author_box {
+		background: #f5f5f5;
+		border: 1px solid #eeeeee;
+		padding: 20px;
+	}
+	.author_box .avatar {
+		border-radius: 50%;
+	}
+	.author_box p {
+		font-size: 13px;
+		text-align: left
+	}
+	.author_box h4 {
+		font-size: 15px;
+		text-align: left
+	}
+	.author_box img {
+		margin-right: 15px;
+	}
+	.alignleft {
+		float: left;
+	}
+
+	.post-meta {
+		color: #333;
+	}
+
+
+
+#aboutwrap {	
+	background: url(images/about.jpg) no-repeat center top;
+	margin-top: -70px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#aboutwrap h1{
+	color:#ffffff;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	letter-spacing: 4px;
+	font-size: 5em;
+	font-weight: bold;
+}
+.banner-h4{
+	color: white;
+	font-weight: 400;
+}
+.caption{
+	margin-top: 2em;
+}
+
+/* Gallery */
+.gallery {
+	margin-top: 30px;
+	overflow: hidden;
+}
+.gallery img{
+	transition: all 0.2s;
+}
+
+.gallery img:hover {
+	opacity: 0.7;
+}
+
+/* Tag Cloud */
+.tagcloud a {
+	display: inline-block;
+	padding: 6px 12px;
+	font-size: 14px !important;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+
+	color: #fff;
+  	background-color: #384452;
+  	border-color: #384452;
+  	margin: 4px;
+}
+
+.tagcloud a:hover {
+	color: #fff;
+  	background-color: #00b3fe;
+  	border-color: #00b3fe;
+}
